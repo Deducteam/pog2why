@@ -695,7 +695,7 @@ let print_tptp driver out =
 let result prover driver : Call_provers.prover_result =
   Call_provers.wait_on_call
     (Driver.prove_task
-       ~limit:Call_provers.{limit_time = 3.; limit_mem = 0; limit_steps = 0}
+       ~limits:Call_provers.{limit_time = 3.; limit_mem = 0; limit_steps = 0}
        ~config:main
        ~command:(Whyconf.get_complete_command prover ~with_steps:false)
     driver !my_task)
